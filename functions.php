@@ -20,12 +20,24 @@ function display_menu_image( $title, $item ) {
 	if( is_object( $item ) && isset( $item->ID ) ) {
     //  the ACF field used to assign images to menu items
 		$menu_image = get_field('menu_image', $item);
+    $alt_attribute = get_field('alt_attribute', $item);
+    $data_attribute = get_field('data_attribute', $item);
+    
 		if ( ! empty( $menu_image ) ) {
-      if (in_array('menu__popup-toggle', $item->classes)) {
-        $attribute = "data-popup='nav'";
-      }
       //  change HTML output if image is set
-			$title = "<img src='".$menu_image['url']."'".$attribute.">";
+			$title = "<img src='".$menu_image['url']."' ";
+
+      if ( ! empty( $alt_attribute ) ) {
+        //  add alt attribute
+        $title .= "alt='".$alt_attribute."' ";      
+      }
+  
+      if ( ! empty( $data_attribute ) ) {
+        //  add data attribute
+      	$title .= $data_attribute;      
+      }
+  
+      $title .= "/>";
 		}
 	}
 	return $title;
