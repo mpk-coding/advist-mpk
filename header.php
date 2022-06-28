@@ -78,7 +78,7 @@
           <div id='mobile-sidepanel' class="mobile-sidepanel">
             <div class="container">
               <button class="navbar-toggler navbar-toggler--mobile" type="button" data-toggle="custom-side-nav"
-                data-function="close" data-target=" #mobile-sidepanel" aria-controls="" aria-expanded="false"
+                data-function="close" data-target="#mobile-sidepanel" aria-controls="" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <i class="fas fa-times"></i>
               </button>

@@ -73,7 +73,7 @@ body {
   height: calc(100vh + 1px);
   padding: var(--paddingTop) 0;
   z-index: 999;
-  transition: all 0.5s ease-out;
+  transition: all 0.33s ease-in-out;
   transform: translateX(100%);
   background: black;
 }
@@ -118,7 +118,7 @@ body {
 .mobile-sidepanel .navbar-toggler, .mobile-sidepanel .menu-item {
   --offset: 50px;
   opacity: 0;
-  transition: all 0.15s ease-out;
+  transition: all 0.15s ease-in-out;
 }
 .mobile-sidepanel .navbar-toggler.show, .mobile-sidepanel .menu-item.show {
   opacity: 1;

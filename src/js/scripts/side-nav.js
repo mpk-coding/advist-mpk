@@ -1,6 +1,7 @@
 //  should be more generic
 //  a side panel class
 //  side navigation per mobile would extend it
+//  instantiated per toggle - maybe could call per actual sidepanel, and have an opening and closing toggler as dependancy
 class SideNav {
   constructor(element) {
     //  the initial toggle button element
@@ -88,7 +89,6 @@ class SideNav {
     return new Promise((resolve, reject) => {
       //  fn to toggle the menu root show animation
       this.target.classList.toggle("show");
-      this.updateAria();
       setTimeout(() => {
         return resolve();
       }, this.panelTransitionDuration());
@@ -99,7 +99,6 @@ class SideNav {
     //  fn to toggle the menu root hide animation
     return new Promise((resolve, reject) => {
       this.target.classList.toggle("show");
-      this.updateAria();
       setTimeout(() => {
         return resolve();
       }, this.panelTransitionDuration());
@@ -109,17 +108,25 @@ class SideNav {
   onShowHandler() {
     //  chaining promises to trigger one animation after the other
     //  should depend on keyframes instead of transition duration times
-    this.show().then(() => {
-      return this.animateItems("forwards");
-    });
+    this.show()
+      .then(() => {
+        return this.animateItems("forwards");
+      })
+      .then(() => {
+        return this.updateAria();
+      });
   }
 
   onHideHandler() {
     //  chaining promises to trigger one animation after the other
     //  should depend on keyframes instead of transition duration times
-    this.animateItems("backwards").then(() => {
-      return this.hide();
-    });
+    this.animateItems("backwards")
+      .then(() => {
+        return this.hide();
+      })
+      .then(() => {
+        return this.updateAria();
+      });
   }
 
   onClickHandler() {
