@@ -8,4 +8,8 @@
   &--mobile {
     align-self: flex-end;
   }
+
+  & * {
+    pointer-events: none;
+  }
 }

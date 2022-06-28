@@ -5,9 +5,9 @@
   right: 0px;
   width: calc(100vw + 1px);
   height: calc(100vh + 1px);
-  padding: var(--paddingTop) 0 0 0;
+  padding: var(--paddingTop) 0;
   z-index: 999;
-  transition: all 0.66s ease-out;
+  transition: all 0.5s ease-out;
   transform: translateX(100%);
 
   background: $cPrimary;
@@ -30,16 +30,44 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
+    position: relative;
   }
 
   & .mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 7rem;
+    height: 100%;
+    padding: 7rem 0;
     display: flex;
     flex: 1 1 auto;
   }
 
   & .mobile-nav__menu {
     align-items: center;
+  }
+
+  & .navbar-toggler {
+    display: unset;
+    transform: translateX(calc(var(--offset) * -1));
+    position: relative;
+    z-index: 1;
+  }
+
+  & .menu-item {
+    transform: translateX(var(--offset));
+  }
+
+  & .navbar-toggler,
+  & .menu-item {
+    --offset: 50px;
+    opacity: 0;
+    transition: all 0.15s ease-out;
+
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }

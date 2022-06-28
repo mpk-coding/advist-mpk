@@ -3,6 +3,7 @@
 //  side navigation per mobile would extend it
 class SideNav {
   constructor(element) {
+    //  the initial toggle button element
     this.toggle = element;
     //  list of all toggles targetting the same element
     this.togglesList = document.querySelectorAll(
@@ -12,6 +13,8 @@ class SideNav {
     this.target = document.querySelector(
       `${this.toggle.getAttribute("data-target")}`
     );
+    //  menu items
+    this.items = this.target.querySelectorAll("[data-target], .menu-item");
     //  event listener
     this.toggle.addEventListener("click", (event) => {
       this.onClickHandler();
@@ -27,9 +30,103 @@ class SideNav {
     });
   }
 
+  panelTransitionDuration() {
+    //  gets transition duration for toggle element and converts to milliseconds
+    return (
+      parseFloat(
+        window
+          .getComputedStyle(this.target)
+          .getPropertyValue("transition-duration")
+      ) * 1000
+    );
+  }
+
+  menuItemTransitionDuration() {
+    //  gets transition duration for toggle element and converts to milliseconds
+    return (
+      parseFloat(
+        window
+          .getComputedStyle(this.items[0])
+          .getPropertyValue("transition-duration")
+      ) * 1000
+    );
+  }
+
+  async animateItems(direction = "forwards") {
+    //  toggle animation for each subsequent menu item in intervals
+    return new Promise((resolve, reject) => {
+      //  first in the queue, ideally should be tied to keyframes on the last menu item
+      //  as it is now, it may not run perfectly, next step can run before the previous finishes
+      //  possibly wait for transition-end event on the previous element and toggle after? for as long as we have items left
+      setTimeout(() => {
+        resolve();
+      }, this.menuItemTransitionDuration() * this.items.length);
+      //  animate each subsequent menu item
+      if (direction == "forwards") {
+        Array.from(this.items).map((item, index) => {
+          return setTimeout(() => {
+            item.classList.toggle("show");
+          }, this.menuItemTransitionDuration() * index);
+        });
+      }
+
+      //  animation in reverse, for closing the menu
+      if (direction == "backwards") {
+        Array.from(this.items)
+          .slice()
+          .reverse()
+          .map((item, index) => {
+            return setTimeout(() => {
+              item.classList.toggle("show");
+            }, this.menuItemTransitionDuration() * index);
+          });
+      }
+    });
+  }
+
+  async show() {
+    return new Promise((resolve, reject) => {
+      //  fn to toggle the menu root show animation
+      this.target.classList.toggle("show");
+      this.updateAria();
+      setTimeout(() => {
+        return resolve();
+      }, this.panelTransitionDuration());
+    });
+  }
+
+  async hide() {
+    //  fn to toggle the menu root hide animation
+    return new Promise((resolve, reject) => {
+      this.target.classList.toggle("show");
+      this.updateAria();
+      setTimeout(() => {
+        return resolve();
+      }, this.panelTransitionDuration());
+    });
+  }
+
+  onShowHandler() {
+    //  chaining promises to trigger one animation after the other
+    //  should depend on keyframes instead of transition duration times
+    this.show().then(() => {
+      return this.animateItems("forwards");
+    });
+  }
+
+  onHideHandler() {
+    //  chaining promises to trigger one animation after the other
+    //  should depend on keyframes instead of transition duration times
+    this.animateItems("backwards").then(() => {
+      return this.hide();
+    });
+  }
+
   onClickHandler() {
-    this.target.classList.toggle("show");
-    this.updateAria();
+    //  one handler to rule them all, the other ones are measly trinkers
+    event.target.getAttribute("data-function")
+      ? this.onHideHandler()
+      : this.onShowHandler();
   }
 }
 
