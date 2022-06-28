@@ -33,7 +33,7 @@ function dev() {
 
   return gulp
     .watch(
-      ["./src/scss/**/*.scss", "./src/js/*.js"],
+      ["./src/scss/**/*.scss", "./src/js/*.js", "./src/js/*/*.js", "./*php"],
       { ignoreInitial: false },
       gulp.parallel(scss, js)
     )

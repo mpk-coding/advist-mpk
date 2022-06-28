@@ -1,0 +1,32 @@
+.navbar-nav {
+  width: 100%;
+  max-width: 730px;
+  justify-content: space-between;
+}
+
+.menu {
+  &-item {
+    display: flex;
+    align-items: center;
+
+    & a:link,
+    & a:visited {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      transition: transform 0.3s ease-out;
+
+      &:hover:not(.menu__popup-toggle a) {
+        transform: translateY(-15px);
+      }
+    }
+  }
+
+  &__logo {
+    & img {
+      width: 70px;
+      height: auto;
+      display: block;
+    }
+  }
+}
