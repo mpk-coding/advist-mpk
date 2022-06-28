@@ -1,0 +1,1 @@
+const someFn=()=>{console.log(1)},fn=()=>(console.log("index.js"),someFn());window.addEventListener("load",n=>{fn()});
