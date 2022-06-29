@@ -1,0 +1,38 @@
+.arrow {
+  padding: 8.8rem 0;
+  font-family: var(--fPoppins);
+
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+
+  @include respond("lg") {
+    grid-template-columns: 1fr;
+  }
+
+  &__content {
+    height: 100%;
+    padding: 0 5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include respond("lg") {
+      padding: 5rem;
+    }
+  }
+
+  &__img {
+    &,
+    & * {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: right;
+    }
+
+    @include respond("lg") {
+      padding-right: 5rem;
+    }
+  }
+}

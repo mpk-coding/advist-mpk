@@ -1,4 +1,6 @@
 html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 12rem;
   font-size: calc(calc(10 / 16) * 100%);
 
   @include respond("sm") {
