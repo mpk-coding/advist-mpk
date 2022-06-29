@@ -39,7 +39,7 @@
       href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-starter' ); ?></a>
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
     <header id="masthead" class="site-header sticky-top" role="banner">
-      <div class="p-4">
+      <div class="px-4">
         <nav class="navbar navbar-expand-md p-0">
           <!--
           <div class="navbar-brand">
@@ -76,7 +76,7 @@
                 ?>
 
           <div id='mobile-sidepanel' class="mobile-sidepanel">
-            <div class="d-flex p-4">
+            <div class="d-flex px-4">
               <button class="navbar-toggler navbar-toggler--mobile" type="button" data-toggle="custom-side-nav"
                 data-function="close" data-target="#mobile-sidepanel" aria-controls="" aria-expanded="false"
                 aria-label="Toggle navigation">

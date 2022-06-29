@@ -3,7 +3,7 @@ html {
   scroll-padding-top: 12rem;
   font-size: calc(calc(10 / 16) * 100%);
 
-  @include respond("sm") {
+  @include respond("xs") {
     font-size: calc(calc(8 / 16) * 100%);
   }
 }

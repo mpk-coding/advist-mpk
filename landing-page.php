@@ -21,6 +21,16 @@ get_header();?>
 
   </div>
 
+  <div id='oferta' class='row m-0'>
+
+    <?php 
+    //  preferably displays links to custom post type - oferta which are separate posts further describing the posts on offer
+    //  I'd simplify the creation via custom post type UI plugin, similar to ACF
+    //  a WP Query would be st to get a certain number or all posts of that type and laid out in the slider template, with links to those posts
+    get_template_part('template-parts/section', 'offer'); ?>
+
+  </div>
+
   <?php } ?>
 
 </div>

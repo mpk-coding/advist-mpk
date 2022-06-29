@@ -56,11 +56,11 @@
       & i {
         color: var(--secondary);
         font-size: 1.6rem;
-        // transition: var(--transition);
+        transition: var(--transition);
 
-        // &:hover {
-        //   color: var(--maroon);
-        // }
+        &:hover {
+          color: var(--maroon);
+        }
       }
     }
 

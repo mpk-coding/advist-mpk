@@ -9,6 +9,11 @@
     grid-template-columns: 1fr;
   }
 
+  & * {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   &__content {
     height: 100%;
     padding: 0 5rem;
@@ -20,6 +25,10 @@
     @include respond("lg") {
       padding: 5rem;
     }
+  }
+
+  &__text {
+    margin-top: 2.2rem;
   }
 
   &__img {
