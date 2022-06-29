@@ -1,0 +1,79 @@
+.glide {
+  &--fullheight {
+    height: 66.2rem;
+  }
+
+  &--fullwidth {
+    & .glide__track,
+    & .glide__slides {
+      height: 100%;
+    }
+
+    & .glide__slide {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 13.9rem;
+
+      @include respond("sm") {
+        padding: 0 10.3rem;
+        justify-content: center;
+      }
+    }
+
+    & .glide__bullets {
+      position: absolute;
+      left: 4.3rem;
+      top: 50%;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 5px;
+
+      & .glide__bullet {
+        width: 6px;
+        background: transparent;
+        border-radius: 100%;
+        border: 1px solid var(--secondary);
+        aspect-ratio: 1 / 1;
+
+        &--active {
+          background: var(--secondary);
+        }
+      }
+    }
+
+    & .glide__socials {
+      position: absolute;
+      bottom: 4rem;
+      left: 4.3rem;
+      display: flex;
+      gap: 3rem;
+
+      @include respond("sm") {
+        gap: 1.5rem;
+      }
+
+      & i {
+        color: var(--secondary);
+        font-size: 1.6rem;
+        // transition: var(--transition);
+
+        // &:hover {
+        //   color: var(--maroon);
+        // }
+      }
+    }
+
+    & .scroll-down {
+      position: absolute;
+      bottom: 2.6rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      font-size: 1.825rem;
+
+      & i {
+        color: var(--secondary);
+      }
+    }
+  }
+}

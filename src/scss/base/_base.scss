@@ -1,3 +1,7 @@
-body {
-  --testingSCSS: 1;
+html {
+  font-size: calc(calc(10 / 16) * 100%);
+
+  @include respond("sm") {
+    font-size: calc(calc(8 / 16) * 100%);
+  }
 }

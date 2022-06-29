@@ -1,17 +1,18 @@
 header#masthead.site-header {
-  --paddingTop: 20px;
-  --paddingBottom: 27px;
+  --paddingTop: 2rem;
+  --paddingBottom: 2.7rem;
   background-color: var(--primary);
   border-bottom: 2px solid var(--maroon);
   padding: var(--paddingTop) 0 var(--paddingBottom) 0;
   box-shadow: 0px 6px 6px #00000029;
 
-  & *:not(i),
   & .navbar-nav > li > a {
     font-family: var(--fPoppins);
     // working against
     // body:not(.theme-preset-active) #masthead .navbar-nav > li > a:hover, body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a
     color: var(--secondary) !important;
     font-weight: 400 !important;
+    font-size: 1.3rem;
+    padding: 0;
   }
 }

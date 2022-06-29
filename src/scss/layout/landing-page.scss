@@ -1,0 +1,9 @@
+.page-template-landing-page {
+  & #content.site-content {
+    padding: 0;
+
+    & > .container {
+      max-width: 100%;
+    }
+  }
+}

@@ -38,9 +38,9 @@
     <a class="skip-link screen-reader-text"
       href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-starter' ); ?></a>
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
-    <header id="masthead" class="site-header navbar-static-top" role="banner">
+    <header id="masthead" class="site-header sticky-top" role="banner">
       <div class="container">
-        <nav class="navbar sticky-top navbar-expand-md p-0">
+        <nav class="navbar navbar-expand-md p-0">
           <!--
           <div class="navbar-brand">
             <?php /*

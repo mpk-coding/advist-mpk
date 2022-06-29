@@ -5,12 +5,18 @@
 
 get_header();?>
 
-<div class="col">
-  <section class='test'>Lorem ipsum dolor sit amet consectetur adipisicing elit. At minus fugiat dolores tempora odit
-    reprehenderit
-    eius quae recusandae, facilis sunt? Asperiores placeat est eum excepturi aperiam error aspernatur soluta saepe.
+<div class="col-12 p-0">
+  <section class='m-0 p-0'>
+    <?php if (! empty (get_field('slider')) ) {
+      get_template_part('template-parts/slider', 'landing'); 
+    }
+    ?>
   </section>
-  <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima eveniet velit aliquid, alias cumque
+</div>
+
+<div class="col">
+  <section id='o-nas'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima eveniet velit aliquid, alias
+    cumque
     blanditiis vitae dignissimos deleniti nesciunt inventore non voluptatibus, numquam maxime eligendi harum ducimus
     animi
     molestiae.</section>

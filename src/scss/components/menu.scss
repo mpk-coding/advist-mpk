@@ -1,6 +1,6 @@
 .navbar-nav {
   width: 100%;
-  max-width: 730px;
+  max-width: 73rem;
   justify-content: space-between;
 }
 
@@ -14,17 +14,17 @@
       display: flex;
       height: 100%;
       align-items: center;
-      transition: transform 0.3s ease-out;
+      transition: var(--transition);
 
       &:hover:not(.menu__popup-toggle a) {
-        transform: translateY(-15px);
+        transform: translateY(-1.5rem);
       }
     }
   }
 
   &__logo {
     & img {
-      width: 70px;
+      width: 7rem;
       height: auto;
       display: block;
     }

@@ -1,9 +1,12 @@
 .navbar-toggler {
   background: none;
   border: none;
-  font-size: 2rem;
   color: var(--secondary);
   margin-left: auto;
+
+  & i {
+    font-size: 2rem;
+  }
 
   &--mobile {
     align-self: flex-end;
