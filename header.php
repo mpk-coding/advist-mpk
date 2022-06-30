@@ -39,23 +39,8 @@
       href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-starter' ); ?></a>
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
     <header id="masthead" class="site-header sticky-top" role="banner">
-      <div class="px-4">
+      <div class="container">
         <nav class="navbar navbar-expand-md p-0">
-          <!--
-          <div class="navbar-brand">
-            <?php /*
-            if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
-            <a href="<?php echo esc_url( home_url( '/' )); ?>">
-              <img src="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>"
-                alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-            </a>
-            <?php else : ?>
-            <a class="site-title"
-              href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
-            <?php endif; */?>
-
-          </div>
-            -->
           <button id='mobile-toggle' class="navbar-toggler" type="button" data-toggle="custom-side-nav"
             data-target="#mobile-sidepanel" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
@@ -76,7 +61,7 @@
                 ?>
 
           <div id='mobile-sidepanel' class="mobile-sidepanel">
-            <div class="d-flex px-4">
+            <div class="d-flex container">
               <button class="navbar-toggler navbar-toggler--mobile" type="button" data-toggle="custom-side-nav"
                 data-function="close" data-target="#mobile-sidepanel" aria-controls="" aria-expanded="false"
                 aria-label="Toggle navigation">

@@ -2,7 +2,7 @@ const initModal = (id, toggleId) => {
   const toggles = document.querySelectorAll(`[data-popup='${toggleId}']`);
 
   jQuery(`#${id}`).modal({
-    show: true,
+    show: false,
   });
 
   Array.from(toggles).map((toggle) => {
