@@ -26,10 +26,15 @@ function display_menu_image( $title, $item ) {
 		$menu_image = get_field('menu_image', $item);
     $alt_attribute = get_field('alt_attribute', $item);
     $data_attribute = get_field('data_attribute', $item);
+    $id_attribute = get_field('id_attribute', $item);
     
 		if ( ! empty( $menu_image ) ) {
       //  change HTML output if image is set
 			$title = "<img src='".$menu_image['url']."' ";
+      
+      if ( ! empty( $id_attribute)) {
+        $title .= "id='".$id_attribute."' ";
+      }
 
       if ( ! empty( $alt_attribute ) ) {
         //  add alt attribute

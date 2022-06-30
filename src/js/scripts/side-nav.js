@@ -144,7 +144,6 @@ class SideNav {
   }
 
   onHideHandler() {
-    console.log(1);
     //  chaining promises to trigger one animation after the other
     //  should depend on keyframes instead of transition duration times
 

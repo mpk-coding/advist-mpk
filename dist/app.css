@@ -244,6 +244,62 @@ html {
   visibility: visible;
 }
 
+.modal--contact .modal-content {
+  padding: 3.4rem 3.8rem 5.3rem;
+  max-width: 46.1rem;
+}
+.modal--contact .modal-header, .modal--contact .modal-body, .modal--contact .modal-footer {
+  padding: 0;
+  border: 0;
+}
+.modal--contact .row {
+  margin-top: 1.6rem;
+}
+.modal--contact .row:first-child {
+  margin-top: 2.1rem;
+}
+.modal--contact .row--submit {
+  margin-top: 3.2rem;
+}
+.modal--contact label {
+  font-family: var(--fPoppins);
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 2.1rem;
+}
+.modal--contact input {
+  font-family: var(--fPoppins);
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 2.1rem;
+  border: 1px solid var(--maroon);
+  border-radius: 0;
+}
+.modal--contact p {
+  font-family: var(--fPoppins);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+  margin-bottom: 0;
+}
+.modal--contact .close {
+  color: var(--maroon);
+  font-size: 1.6rem;
+  padding: 0;
+  margin: 0;
+}
+.modal--contact .btn {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.3rem;
+  padding: 0.73em 5.3em;
+  background: var(--maroon);
+  color: var(--secondary);
+  margin: 0 auto;
+  display: block;
+}
+
 .navbar-toggler {
   background: none;
   border: none;
