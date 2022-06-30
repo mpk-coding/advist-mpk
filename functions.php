@@ -75,3 +75,30 @@ add_action( 'admin_init', 'advist_editor_hide' );
 function advist_render_picture($classes, $img_array) {
   get_template_part('template-parts/render', 'picture', array('classes' => $classes, 'img_array' => $img_array));
 }
+
+//  extending widget template
+function register_widget_areas() {
+
+  register_sidebar( array(
+    'name'          => 'AdVIST Footer 4',
+    'id'            => 'advist-footer-4',
+    'description'   => 'This widget area discription',
+    'before_widget' => '<section class="footer-area advist-footer-4">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+  register_sidebar( array(
+    'name'          => 'AdVIST Footer 5',
+    'id'            => 'advist-footer-5',
+    'description'   => 'This widget area discription',
+    'before_widget' => '<section class="footer-area advist-footer-4">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+}
+
+add_action( 'widgets_init', 'register_widget_areas', 999 );
