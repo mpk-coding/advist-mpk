@@ -28,7 +28,7 @@
 
       <li class="glide__slide">
         <div class="slide">
-          <h3 class="slide__heading"><?php echo($heading)?></h3>
+          <h2 class="slide__heading"><?php echo($heading)?></h2>
           <p class="slide__content"><?php echo($content)?></p>
           <a href="<?php echo($btn['url'])?>" class="slide__link"><?php echo($btn['tekst']) ?></a>
         </div>

@@ -1,4 +1,4 @@
 window.addEventListener("load", (event) => {
-  initSideNav();
+  sideNav = new SideNav(document.querySelector("#mobile-toggle"));
   setupGlide();
 });

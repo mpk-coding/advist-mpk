@@ -15,10 +15,29 @@ class SideNav {
       `${this.toggle.getAttribute("data-target")}`
     );
     //  menu items
-    this.items = this.target.querySelectorAll("[data-target], .menu-item");
+    this.items = this.target.querySelectorAll(".menu-item");
+
+    //  animated items
+    this.animated = this.target.querySelectorAll("[data-target], .menu-item");
     //  event listener
-    this.toggle.addEventListener("click", (event) => {
-      this.onClickHandler();
+    Array.from(this.togglesList).map((toggle) => {
+      return toggle.addEventListener("click", (event) => {
+        this.onClickHandler();
+      });
+    });
+
+    //  closing the side nav when item is clicked
+    Array.from(this.items).map((item) => {
+      return item.addEventListener("click", (event) => {
+        return this.onHideHandler();
+      });
+    });
+
+    //  closing the side nav when item is activated via keyboard
+    Array.from(this.items).map((item) => {
+      return item.addEventListener("keydown", (event) => {
+        return event.keyCode == 32 && event.target.click();
+      });
     });
   }
 
@@ -63,11 +82,11 @@ class SideNav {
       //  schedule to resolve after below animation ends
       setTimeout(() => {
         resolve();
-      }, this.menuItemTransitionDuration() * this.items.length);
+      }, this.menuItemTransitionDuration() * this.animated.length);
 
       //  animate each subsequent menu item
       if (direction == "forwards") {
-        Array.from(this.items).map((item, index) => {
+        Array.from(this.animated).map((item, index) => {
           return setTimeout(() => {
             item.classList.toggle("show");
           }, this.menuItemTransitionDuration() * index);
@@ -76,7 +95,7 @@ class SideNav {
 
       //  animation in reverse, for closing the menu
       if (direction == "backwards") {
-        Array.from(this.items)
+        Array.from(this.animated)
           .slice()
           .reverse()
           .map((item, index) => {
@@ -125,6 +144,7 @@ class SideNav {
   }
 
   onHideHandler() {
+    console.log(1);
     //  chaining promises to trigger one animation after the other
     //  should depend on keyframes instead of transition duration times
 
@@ -147,13 +167,3 @@ class SideNav {
       : this.onShowHandler();
   }
 }
-
-const initSideNav = () => {
-  const toggles = document.querySelectorAll("[data-toggle='custom-side-nav'");
-
-  //  gets all toggles and instantiates a new Object for every one;
-  //  could set up a parameter to accept an array of elements instead of hard coding it above
-  return Array.from(toggles).map((element) => {
-    return new SideNav(element);
-  });
-};

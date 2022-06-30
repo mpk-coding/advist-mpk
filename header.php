@@ -56,8 +56,8 @@
 
           </div>
             -->
-          <button class="navbar-toggler" type="button" data-toggle="custom-side-nav" data-target="#mobile-sidepanel"
-            aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+          <button id='mobile-toggle' class="navbar-toggler" type="button" data-toggle="custom-side-nav"
+            data-target="#mobile-sidepanel" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
           </button>
 

@@ -16,7 +16,7 @@
       align-items: center;
       transition: var(--transition);
 
-      &:hover:not(.menu__popup-toggle a) {
+      &:hover:not(.menu__popup-toggle a):not(.mobile-nav a) {
         transform: translateY(-1.5rem);
       }
     }
