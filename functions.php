@@ -56,7 +56,7 @@ function advist_editor_hide() {
 	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
 	if( !isset( $post_id ) ) return;
   
-  //  could possibly get them all from a specific folder an the server instead of having to manually update the array
+  //  could possibly get them all from a specific folder on the server instead of having to manually update the array
   $advist_templates = ['landing-page.php'];
   
 	// Get the name of the Page Template file.
@@ -68,3 +68,10 @@ function advist_editor_hide() {
 }
 
 add_action( 'admin_init', 'advist_editor_hide' );
+
+//  fn to render responsive pictures
+//  $classes = STRING
+//  $img_array = img array returned from ACF
+function advist_render_picture($classes, $img_array) {
+  get_template_part('template-parts/render', 'picture', array('classes' => $classes, 'img_array' => $img_array));
+}

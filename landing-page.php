@@ -33,16 +33,11 @@ get_header();?>
 
   <?php } ?>
 
-</div>
+  <div id="aktualnosci" class="row m-0">
 
-<div class="col">
-  <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolores nihil ducimus enim autem ut iusto
-    numquam corporis neque, sint perferendis voluptate. Consequuntur alias suscipit officia odio incidunt quis
-    tenetur!
-  </section>
-  <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus nam laudantium, inventore hic dolores
-    obcaecati tempora cupiditate atque numquam, officia adipisci enim natus aliquid! Aliquam sit omnis dignissimos
-    voluptatum facere.</section>
+    <?php get_template_part('template-parts/section', 'news'); ?>
+  </div>
+
 </div>
 
 <?php

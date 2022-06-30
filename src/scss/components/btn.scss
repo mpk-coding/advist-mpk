@@ -1,0 +1,32 @@
+.btn {
+  border-radius: 0;
+  &--solid {
+    transition: var(--transition);
+    padding: 0.63em 2.54em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+  }
+
+  &--shrink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 13.2rem;
+    min-height: 4.2rem;
+    margin-top: 2.8rem;
+    font-size: 1.8rem;
+    border: 1px solid var(--maroon);
+    transition: var(--transition);
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:hover {
+      font-size: 1.3rem;
+    }
+  }
+}

@@ -32,15 +32,7 @@
           <p class="slide__content"><?php echo($content)?></p>
           <a href="<?php echo($btn['url'])?>" class="slide__link"><?php echo($btn['tekst']) ?></a>
         </div>
-        <picture class="slide__img">
-          <!-- mobile -->
-          <source srcset='<?php echo($img['sizes']['medium_large']); ?>'
-            media='(max-width: <?php echo($img['sizes']['medium_large-width']); ?>px)'>
-          <!-- large -->
-          <source srcset='<?php echo($img['sizes']['2048x2048']); ?>'
-            media='(min-width: <?php echo($img['sizes']['large-width']); ?>px)'>
-          <img src="<?php echo($img['sizes']['2048x2048']); ?>" alt="<?php echo($img['alt']); ?>">
-        </picture>
+        <?php advist_render_picture('slide__img', $img)?>
       </li>
 
       <?php } ?>

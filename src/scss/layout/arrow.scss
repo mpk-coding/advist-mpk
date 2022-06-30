@@ -23,7 +23,7 @@
     align-items: flex-start;
 
     @include respond("lg") {
-      padding: 5rem;
+      padding: 5rem 15px 0;
     }
   }
 

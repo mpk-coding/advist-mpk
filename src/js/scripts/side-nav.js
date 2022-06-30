@@ -56,12 +56,15 @@ class SideNav {
   async animateItems(direction = "forwards") {
     //  toggle animation for each subsequent menu item in intervals
     return new Promise((resolve, reject) => {
-      //  first in the queue, ideally should be tied to keyframes on the last menu item
+      //  first in the queue, ideally should be tied to keyframes
       //  as it is now, it may not run perfectly, next step can run before the previous finishes
       //  possibly wait for transition-end event on the previous element and toggle after? for as long as we have items left
+
+      //  schedule to resolve after below animation ends
       setTimeout(() => {
         resolve();
       }, this.menuItemTransitionDuration() * this.items.length);
+
       //  animate each subsequent menu item
       if (direction == "forwards") {
         Array.from(this.items).map((item, index) => {
@@ -108,6 +111,10 @@ class SideNav {
   onShowHandler() {
     //  chaining promises to trigger one animation after the other
     //  should depend on keyframes instead of transition duration times
+
+    //  first, animates the black background
+    //  then animates menu items
+    //  lastly updates aria-expanded
     this.show()
       .then(() => {
         return this.animateItems("forwards");
@@ -120,6 +127,10 @@ class SideNav {
   onHideHandler() {
     //  chaining promises to trigger one animation after the other
     //  should depend on keyframes instead of transition duration times
+
+    //  first, animates the black background
+    //  then animates menu items
+    //  lastly updates aria-expanded
     this.animateItems("backwards")
       .then(() => {
         return this.hide();
@@ -130,7 +141,7 @@ class SideNav {
   }
 
   onClickHandler() {
-    //  one handler to rule them all, the other ones are measly trinkers
+    //  one handler to rule them all, the other ones are measly trinkets
     event.target.getAttribute("data-function")
       ? this.onHideHandler()
       : this.onShowHandler();

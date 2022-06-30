@@ -1,7 +1,8 @@
 .offer {
+  --verticalPadding: 2.9rem;
   background: var(--light);
   padding-top: 7.9rem;
-  padding-bottom: 7.9rem;
+  padding-bottom: calc(7.9rem - var(--verticalPadding));
   position: relative;
   z-index: 1;
 
@@ -13,7 +14,7 @@
   }
 
   &__slides.glide__slides {
-    padding: 2.9rem 0;
+    padding: var(--verticalPadding) 0;
     margin: 0;
   }
 
@@ -78,13 +79,18 @@
     appearance: none;
     background: transparent;
     border: none;
+    --transform: 100%;
+
+    @include respond("sm") {
+      --transform: 0%;
+    }
 
     &--left {
-      transform: translateX(-100%);
+      transform: translateX(calc(var(--transform) * -1));
     }
 
     &--right {
-      transform: translateX(100%);
+      transform: translateX(calc(var(--transform)));
     }
 
     & i {

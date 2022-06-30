@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="offer col-12">
+<section class="offer col-12 px-0">
   <div class="container">
     <h2 class="section__heading">Oferta</h2>
     <div class="offer__items">
@@ -27,15 +27,7 @@
 
             <li class="glide__slide offer__slide">
               <div class="offer__single">
-                <picture class="offer__img">
-                  <!-- mobile -->
-                  <source srcset='<?php echo($img['sizes']['medium_large']); ?>'
-                    media='(max-width: <?php echo($img['sizes']['medium_large-width']); ?>px)'>
-                  <!-- large -->
-                  <source srcset='<?php echo($img['sizes']['2048x2048']); ?>'
-                    media='(min-width: <?php echo($img['sizes']['large-width']); ?>px)'>
-                  <img src="<?php echo($img['sizes']['2048x2048']); ?>" alt="<?php echo($img['alt']); ?>">
-                </picture>
+                <?php advist_render_picture('offer__img', $img); ?>
                 <h3 class="offer__title">
                   <?php echo($caption)?>
                 </h3>
@@ -57,16 +49,8 @@
     </div>
   </div>
 </section>
-<picture class="offer__background col-12 p-0">
-  <?php if (! empty(get_field('sekcja_oferta'))) {
+<?php if (! empty(get_field('sekcja_oferta'))) {
         $img = get_field('sekcja_oferta')['obraz_pod_pozycjami'];
-      ?>
-  <!-- mobile -->
-  <source srcset='<?php echo($img['sizes']['medium_large']); ?>'
-    media='(max-width: <?php echo($img['sizes']['medium_large-width']); ?>px)'>
-  <!-- large -->
-  <source srcset='<?php echo($img['sizes']['2048x2048']); ?>'
-    media='(min-width: <?php echo($img['sizes']['large-width']); ?>px)'>
-  <img src="<?php echo($img['sizes']['2048x2048']); ?>" alt="<?php echo($img['alt']); ?>">
-</picture>
-<?php } ?>
+        
+        advist_render_picture('offer__background col-12 p-0', $img);
+} ?>

@@ -17,16 +17,8 @@
   
   ?>
 <section class="arrow col-12">
-  <picture class="arrow__img">
-    <!-- mobile -->
-    <source srcset='<?php echo($img['sizes']['medium_large']); ?>'
-      media='(max-width: <?php echo($img['sizes']['medium_large-width']); ?>px)'>
-    <!-- large -->
-    <source srcset='<?php echo($img['sizes']['2048x2048']); ?>'
-      media='(min-width: <?php echo($img['sizes']['large-width']); ?>px)'>
-    <img src="<?php echo($img['sizes']['2048x2048']); ?>" alt="<?php echo($img['alt']); ?>">
-  </picture>
-  <div class="arrow__content">
+  <?php advist_render_picture('arrow__img', $img); ?>
+  <div class="arrow__content container">
     <h2 class="arrow__heading section__heading">
       <?php echo($header)?>
     </h2>
