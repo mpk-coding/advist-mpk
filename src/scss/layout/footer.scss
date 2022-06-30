@@ -1,0 +1,70 @@
+#footer-widget {
+  background: #212529;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5.6rem;
+  padding-top: 8.9rem;
+  padding-bottom: 8.1rem;
+
+  @include respond("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond("xs") {
+    grid-template-columns: 1fr;
+  }
+
+  & * {
+    color: var(--secondary);
+  }
+
+  &__col {
+    padding: 0;
+
+    & h3 {
+      font-family: var(-fPoppins);
+      font-size: 1.3rem;
+      line-height: 2.3rem;
+      font-weight: bold;
+      margin-bottom: 1.1rem;
+    }
+
+    & p {
+      font-family: var(--fPoppins);
+      font-size: 1.3rem;
+      line-height: 2.3rem;
+    }
+  }
+
+  &__logo {
+    width: 13.4rem;
+  }
+
+  &__call {
+    & img {
+      width: 3.21rem;
+    }
+
+    & .wp-widget-group__inner-blocks {
+      display: flex;
+      align-items: center;
+
+      & * {
+        margin-bottom: 0;
+        line-height: 2rem;
+      }
+
+      & p {
+        margin-left: 0.84rem;
+        font-size: 1.3rem;
+
+        * a {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+}

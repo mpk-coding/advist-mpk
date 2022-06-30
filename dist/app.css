@@ -76,6 +76,15 @@ html {
   font-size: 1.3rem;
 }
 
+#colophon .site-info {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+  padding: 2rem 0;
+  text-align: center;
+  color: black;
+}
+
 .glide--fullheight {
   height: 66.2rem;
 }
@@ -361,6 +370,67 @@ header#masthead.site-header .navbar-nav > li > a {
   .arrow__img {
     padding-right: 5rem;
   }
+}
+
+#footer-widget {
+  background: #212529;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5.6rem;
+  padding-top: 8.9rem;
+  padding-bottom: 8.1rem;
+}
+@media only screen and (max-width: 992px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+.footer * {
+  color: var(--secondary);
+}
+.footer__col {
+  padding: 0;
+}
+.footer__col h3 {
+  font-family: var(-fPoppins);
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 1.1rem;
+}
+.footer__col p {
+  font-family: var(--fPoppins);
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+}
+.footer__logo {
+  width: 13.4rem;
+}
+.footer__call img {
+  width: 3.21rem;
+}
+.footer__call .wp-widget-group__inner-blocks {
+  display: flex;
+  align-items: center;
+}
+.footer__call .wp-widget-group__inner-blocks * {
+  margin-bottom: 0;
+  line-height: 2rem;
+}
+.footer__call .wp-widget-group__inner-blocks p {
+  margin-left: 0.84rem;
+  font-size: 1.3rem;
+}
+.footer__call .wp-widget-group__inner-blocks p * a {
+  font-size: 1.7rem;
 }
 
 .page-template-landing-page #content.site-content {
